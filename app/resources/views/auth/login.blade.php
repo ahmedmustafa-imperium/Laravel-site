@@ -1,0 +1,5 @@
+@extends('layouts.storefront')
+@section('title', 'Sign in')
+@section('content')
+<section class="auth-page"><div class="auth-card"><span class="eyebrow">Welcome back</span><h1>Sign in to your account</h1><p>Track orders, save your details and check out faster.</p><form method="post" action="{{ route('login.store') }}">@csrf<label class="field">Email address<input type="email" name="email" value="{{ old('email') }}" autocomplete="email" required autofocus></label><label class="field">Password <a href="{{ route('password.request') }}">Forgot password?</a><span class="password-field"><input type="password" name="password" autocomplete="current-password" required><button type="button" data-password-toggle aria-label="Show password">Show</button></span></label><label class="check-field"><input type="checkbox" name="remember" value="1"> Keep me signed in</label><button class="button button--full" type="submit">Sign in</button></form><div class="auth-divider"><span>New to SNH?</span></div><a class="button button--secondary button--full" href="{{ route('register') }}">Create an account</a></div></section>
+@endsection
