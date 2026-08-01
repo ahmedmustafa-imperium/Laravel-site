@@ -5,7 +5,6 @@ yarn-error.log
 
 # Laravel 4 specific
 bootstrap/compiled.php
-app/storage/
 
 # Laravel 5 & Lumen specific
 public/storage
@@ -28,3 +27,11 @@ Homestead.json
 .env.production
 .phpactor.json
 auth.json
+
+# Ignore app-level environment and backups
+app/storage/backups/
+app/tmp/
+
+# SQL dumps and archives
+*.sql
+*.sql.gz

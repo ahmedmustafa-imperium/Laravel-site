@@ -1,0 +1,4 @@
+/* Keep base and responsive rules in one Vite entry so their cascade is deterministic. */
+@import './app.css';
+@import './responsive.css';
+@import './catalog-layout.css';

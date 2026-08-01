@@ -1,5 +1,3 @@
-import '../css/responsive.css';
-
 const ready = (callback) => document.readyState === 'loading'
     ? document.addEventListener('DOMContentLoaded', callback)
     : callback();

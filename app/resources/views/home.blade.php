@@ -27,10 +27,10 @@
 <section class="promo-section container">
     <a class="promo promo--wide" href="{{ route('products.index', ['sort' => 'featured']) }}"><img src="{{ asset('images/snh/promo-mega.webp') }}" alt="Mega deals on SNH essentials" loading="lazy"></a>
     <div class="promo-grid">
-        <a class="promo" href="{{ route('categories.show', 'paper-cups') }}"><img src="{{ asset('images/snh/promo-packaging.webp') }}" alt="Paper and plastic packaging" loading="lazy"></a>
-        <a class="promo" href="{{ route('categories.show', 'tissue-products') }}"><img src="{{ asset('images/snh/promo-tissue.webp') }}" alt="Soft and hygienic tissue products" loading="lazy"></a>
-        <a class="promo" href="{{ route('categories.show', 'food-products') }}"><img src="{{ asset('images/snh/promo-food.webp') }}" alt="ATF food and grocery products" loading="lazy"></a>
-        <a class="promo" href="{{ route('categories.show', 'pet-products') }}"><img src="{{ asset('images/snh/promo-pets.webp') }}" alt="Pet food and supplies" loading="lazy"></a>
+        <a class="promo" href="{{ route('products.index', ['sort' => 'featured']) }}"><img src="{{ asset('images/snh/promo-packaging.webp') }}" alt="Paper and plastic packaging" loading="lazy"></a>
+        <a class="promo" href="{{ route('products.index', ['sort' => 'featured']) }}"><img src="{{ asset('images/snh/promo-tissue.webp') }}" alt="Soft and hygienic tissue products" loading="lazy"></a>
+        <a class="promo" href="{{ route('products.index', ['sort' => 'featured']) }}"><img src="{{ asset('images/snh/promo-food.webp') }}" alt="ATF food and grocery products" loading="lazy"></a>
+        <a class="promo" href="{{ route('products.index', ['sort' => 'featured']) }}"><img src="{{ asset('images/snh/promo-pets.webp') }}" alt="Pet food and supplies" loading="lazy"></a>
     </div>
 </section>
 
@@ -40,16 +40,16 @@
     </div>
 </section>
 
-@include('partials.product-rail', ['title' => 'Packaging & home essentials', 'subtitle' => 'Built for busy days', 'products' => $rails['packaging']->merge($featuredProducts)->unique('id')->take(10), 'link' => route('categories.show', 'bagasse-products'), 'surface' => 'gray'])
+@include('partials.product-rail', ['title' => 'Packaging & home essentials', 'subtitle' => 'Built for busy days', 'products' => $rails['packaging']->merge($featuredProducts)->unique('id')->take(10), 'link' => route('products.index', ['sort' => 'featured']), 'surface' => 'gray'])
 
 <section class="split-promos container">
-    <a href="{{ route('categories.show', 'charcoal-wood') }}"><span>Fire up the flavour</span><h2>Charcoal & wood</h2><b>Shop now →</b></a>
-    <a href="{{ route('categories.show', 'aurasync') }}"><span>Smarter everyday living</span><h2>AuraSync</h2><b>Discover →</b></a>
+    <a href="{{ route('products.index', ['sort' => 'featured']) }}"><span>Fire up the flavour</span><h2>Charcoal & wood</h2><b>Shop now →</b></a>
+    <a href="{{ route('products.index', ['sort' => 'featured']) }}"><span>Smarter everyday living</span><h2>AuraSync</h2><b>Discover →</b></a>
 </section>
 
-@include('partials.product-rail', ['title' => 'Food & grocery favourites', 'subtitle' => 'Pantry picks', 'products' => $rails['grocery'], 'link' => route('categories.show', 'food-products'), 'surface' => 'white'])
-@include('partials.product-rail', ['title' => 'Soft, fresh & hygienic', 'subtitle' => 'Everyday tissue care', 'products' => $rails['tissue'], 'link' => route('categories.show', 'tissue-products'), 'surface' => 'green'])
-@include('partials.product-rail', ['title' => 'New for your best friend', 'subtitle' => 'Pet favourites', 'products' => $rails['pets'], 'link' => route('categories.show', 'pet-products'), 'surface' => 'white'])
+@include('partials.product-rail', ['title' => 'Food & grocery favourites', 'subtitle' => 'Pantry picks', 'products' => $rails['grocery'], 'link' => route('products.index', ['sort' => 'featured']), 'surface' => 'white'])
+@include('partials.product-rail', ['title' => 'Soft, fresh & hygienic', 'subtitle' => 'Everyday tissue care', 'products' => $rails['tissue'], 'link' => route('products.index', ['sort' => 'featured']), 'surface' => 'green'])
+@include('partials.product-rail', ['title' => 'New for your best friend', 'subtitle' => 'Pet favourites', 'products' => $rails['pets'], 'link' => route('products.index', ['sort' => 'featured']), 'surface' => 'white'])
 
 <section class="story-section">
     <div class="container story-grid">

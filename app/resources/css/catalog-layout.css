@@ -1,0 +1,26 @@
+/* The generic .button rule must not make the mobile filter trigger visible on desktop. */
+.filter-mobile-trigger.button {
+    display: none;
+}
+
+.catalog-results {
+    min-width: 0;
+}
+
+@media (min-width: 768px) {
+    .catalog-layout > .catalog-sidebar {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .catalog-layout > .catalog-results {
+        grid-column: 2;
+        grid-row: 1;
+    }
+}
+
+@media (max-width: 767px) {
+    .filter-mobile-trigger.button {
+        display: flex;
+    }
+}

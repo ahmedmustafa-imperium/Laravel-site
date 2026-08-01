@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @vite(['resources/css/site.css', 'resources/js/app.js'])
     @stack('head')
 </head>
 <body class="@yield('body-class')">
@@ -96,7 +96,8 @@
                 </div>
                 <a class="{{ request()->routeIs('home') ? 'active' : '' }}" href="{{ route('home') }}">Home</a>
                 <a href="{{ route('products.index', ['sort' => 'featured']) }}">Mega Deals</a>
-                <a href="{{ route('categories.show', 'food-products') }}">Food Products</a>
+                <a href="{{ route('categories.show', 'tissue-products') }}">Tissue Products</a>
+                <a href="{{ route('products.index', ['sort' => 'featured']) }}">Food Products</a>
                 <a href="{{ route('categories.show', 'pet-products') }}">Pet Brands</a>
                 <a href="{{ route('categories.show', 'eco-friendly') }}">Eco Friendly</a>
                 <a href="{{ route('contact') }}">Customization</a>
@@ -138,7 +139,7 @@
                 <a href="tel:+971523993759">+971 52 399 3759</a>
                 <a href="mailto:contact@snhuae.com">contact@snhuae.com</a>
             </section>
-            <section><h2>Shop</h2><a href="{{ route('home') }}">Home</a><a href="{{ route('products.index') }}">Mega Deals</a><a href="{{ route('categories.show', 'food-products') }}">Food Products</a><a href="{{ route('categories.show', 'pet-products') }}">Pet Products</a><a href="{{ route('contact') }}">Customization</a></section>
+            <section><h2>Shop</h2><a href="{{ route('home') }}">Home</a><a href="{{ route('products.index') }}">Mega Deals</a><a href="{{ route('products.index', ['sort' => 'featured']) }}">Food Products</a><a href="{{ route('categories.show', 'pet-products') }}">Pet Products</a><a href="{{ route('contact') }}">Customization</a></section>
             <section><h2>Popular Categories</h2>@foreach($navCategories->take(7) as $category)<a href="{{ route('categories.show', $category) }}">{{ $category->name }}</a>@endforeach</section>
             <section><h2>Further Info</h2><a href="{{ route('about') }}">About Us</a><a href="{{ route('contact') }}">Contact Us</a><a href="{{ route('account.index') }}">My Account</a><a href="#">Privacy Policy</a><a href="#">Terms & Conditions</a><a href="#">Returns Policy</a></section>
             <section><h2>Our Locations</h2><p><strong>Dubai</strong><br>Warehouses 17–20, 22nd St, Al Quoz Industrial Area 3</p><p><strong>Umm Al Quwain</strong><br>Sector 4, Plot 30, Block 5, New Industrial Area</p></section>

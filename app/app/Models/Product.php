@@ -83,11 +83,22 @@ class Product extends Model
         if (! $path) {
             return asset($fallback);
         }
+
         if (Str::startsWith($path, ['http://', 'https://', '/'])) {
             return $path;
         }
 
-        return asset($path);
+        $normalized = str_replace('\\', '/', $path);
+
+        if (Str::startsWith($normalized, 'public/storage/')) {
+            $normalized = Str::after($normalized, 'public/');
+        }
+
+        if (! Str::startsWith($normalized, 'storage/')) {
+            $normalized = 'storage/'.$normalized;
+        }
+
+        return asset($normalized);
     }
 
     public function galleryUrls(): array
